@@ -29,7 +29,7 @@ def rank_L(ranking) -> int:
     return l
 
 
-def launch(str_a: str, str_b: str) -> str:
+def test(str_a: str, str_b: str) -> str:
     ranking_a = json.loads(str_a)
     ranking_b = json.loads(str_b)
     y_a = relationship_matrix(ranking_a)
