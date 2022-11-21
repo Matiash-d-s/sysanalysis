@@ -4,7 +4,7 @@ import numpy as np
 
 def matrix(ranking):
     r = dict()
-    rank_len = ranking_length(ranking)
+    rank_len = rank_L(ranking)
     for i, rank in enumerate(ranking):
         if type(rank) is str:
             r[int(rank)] = i
@@ -32,9 +32,9 @@ def rank_L(ranking) -> int:
 def test(str_a: str, str_b: str) -> str:
     ranking_a = json.loads(str_a)
     ranking_b = json.loads(str_b)
-    y_a = relationship_matrix(ranking_a)
+    y_a = matrix(ranking_a)
     y_a_t = y_a.transpose()
-    y_b = relationship_matrix(ranking_b)
+    y_b = matrix(ranking_b)
     y_b_t = y_b.transpose()
     y_a_b = np.multiply(y_a, y_b)
     y_a_b_t = np.multiply(y_a_t, y_b_t)
